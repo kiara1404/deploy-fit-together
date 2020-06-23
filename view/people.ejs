@@ -1,0 +1,52 @@
+<%- include('head') -%>
+<header>
+       
+  <a href="/">
+      <ul class="gf_banner">
+      <li><img src="img/da_logo_wit.png"></li>
+      <li>Fit together</li>
+      </a>
+  </ul>
+  <div class="gf_signup">
+    <form method="POST" action="/logout" class="gf_logout"><input class="gf_logout"  value="Logout" type="submit"></form>
+ 
+  </div>
+  
+</header>
+<main>
+  <h1>Check all these people out!</h1>
+  <section class="gf_wrapper-m">
+  <% for (var index = 0; index < data.length; index++) { %>
+    <article class="gf_wrapper-s">
+      <a href="/<%= data[index]._id %>">
+        <h3>
+        <%= data[index].name%>
+       </h3>
+      </a>
+      <img src="img/workout-buddies.jpeg">
+      <article class="gf_wrapper-xs">
+        <h4>Age:</h4>
+        <p><%= data[index].age %></p>
+        <h4>From:</h4>
+        <p><%= data[index].place %></p>
+        <h4>Type of training:</h4>
+        <p><%= data[index].training %></p>
+        <h4>Level of training:</h4>
+        <p><%= data[index].level %></p>
+
+        <% if(data[index].search){%>
+          <h4>Who I'm looking for</h4>
+          <p><%= data[index].search %></p>
+        <% }%>
+        
+    </article>
+    </article>
+    <% } %>
+     
+  </section>
+</main>
+
+
+
+
+    <%- include('footer'); -%>

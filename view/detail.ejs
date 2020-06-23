@@ -1,0 +1,47 @@
+<%- include('head') -%>
+<header>
+       
+    <a href="/">
+        <ul class="gf_banner">
+        <li><img src="img/da_logo_wit.png"></li>
+        <li>Fit together</li>
+        </a>
+    </ul>
+    <div class="gf_signup">
+        <form method="POST" action="/logout" class="gf_logout"><input class="gf_logout"  value="Logout" type="submit"></form>
+ 
+
+    </div>
+    
+</header>
+
+
+    <h2 class="gf_heading">Welcome to <%= data.name %>'s profile! </h2>
+    <article class="gf_wrapper">
+        <ul class="gf_person">
+            <li>
+                <h3 class="gf_person_name"><%= data.name %></h3>
+            </li>
+            <li>
+                <p class="gf_person_age"><%= data.age %></p>
+            </li>
+            <li>
+                <p class="gf_person_place"><%= data.place %></p>
+            </li>
+            <li>
+                <img src="/img/workout-buddies.jpeg" alt="">
+            </li>
+            <li>
+                <h4 class="gf_person_bio">Type of training:</h4>
+                <p class="gf_person_bio"><%= data.training %></p>
+            </li>
+            <li>
+                <h4 class="gf_person_bio">Level of training:</h4>
+                <p class="gf_person_bio"><%= data.level %></p>
+            </li>
+        </ul>
+        
+
+    </article>
+
+    <%- include('footer'); -%>
